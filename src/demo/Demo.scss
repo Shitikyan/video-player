@@ -1,0 +1,6 @@
+@for $i from 1 through 5 {
+  .video-demo-#{$i} {
+    width: #{$i * 100}px;
+    height: #{$i * 100}px;
+  }
+}

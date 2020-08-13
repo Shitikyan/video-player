@@ -1,10 +1,12 @@
-import React from 'react';
-import VideoPlayer from './video-player';
+import React from "react";
+import Demo from './demo';
 
-const App = () => (
-  <div className="App">
-    <VideoPlayer />
-  </div>
-);
+const App = () => {
+  return (
+    <div className="App">
+      <Demo />
+    </div>
+  );
+};
 
 export default App;
