@@ -11,6 +11,7 @@ import './VideoPlayer.scss';
  * @param {number} [volumeDelta=0.1] Valume change rate. Defaults to 0.1.
  * @param {number} [changeDelta=5] Video backward/forward change rate. Defaults to 5.
  * @param {boolean} [muted=false] Is video muted initially. Defaults to false.
+ * @param {boolean} [controls=false] Indicates if video default controls will be shown. Defaults to false.
  *
  * @fires onPlay Fired when video starts playing.
  * @fires onPause Fired when video paused.
@@ -191,6 +192,9 @@ export default class VideoPlayer extends React.Component {
     return this.VIDEO__DELTA__DEFAULT;
   }
 
+  /**
+   * Internal usage.
+   */
   eventProxy(handler, eventType, ...eventArgs) {
     return () => {
       handler();
@@ -200,11 +204,12 @@ export default class VideoPlayer extends React.Component {
 
   render() {
     const { url, volume, playing, muted } = this.state;
+    const { controls, className } = this.props;
 
     return (
       <ReactPlayer
-        controls
-        className={this.props.className ?? null}
+        controls={controls}
+        className={className ?? null}
         ref={this.$player}
         url={url}
         volume={volume}

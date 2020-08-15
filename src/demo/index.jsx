@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRef } from 'react';
 import VideoPlayer from '../video-player';
-import SampleVideo from './assets/RecordedVideo.webm';
+import SampleVideo from './assets/y2mate.com.mp4';
 
 import './Demo.scss';
 
@@ -54,10 +54,11 @@ const Demo = () => {
 
       <div style={{ width: width, height: height }}>
         <VideoPlayer
+          className="example-name"
           ref={$videoRef}
           url={SampleVideo}
           volumeDelta={0.25}
-          changeDelta={2}
+          changeDelta={15}
           onPlay={onPlay.bind(this)}
           onPause={onPause.bind(this)}
           onMuted={onMuted.bind(this)}
